@@ -48,5 +48,17 @@ Route::middleware(['auth','role:agent'])->group(function(){
 
 }); //End Group Agent Middleware
 
+// Property Type All Route 
+Route::controller(PropertyTypeController::class)->group(function(){
+
+     Route::get('/all/type', 'AllType')->name('all.type')->middleware('permission:all.type'); 
+     Route::get('/add/type', 'AddType')->name('add.type')->middleware('permission:add.type');
+     Route::post('/store/type', 'StoreType')->name('store.type'); 
+     Route::get('/edit/type/{id}', 'EditType')->name('edit.type');
+     Route::post('/update/type', 'UpdateType')->name('update.type');
+     Route::get('/delete/type/{id}', 'DeleteType')->name('delete.type');  
+
+});
+
 
 
