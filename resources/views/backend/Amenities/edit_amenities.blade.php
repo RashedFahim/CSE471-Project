@@ -12,13 +12,15 @@
             <div class="row">
              <div class="card">
               <div class="card-body">
-			<h6 class="card-title">Add Amenities   </h6>
-            <form id="myForm" method="POST" action="{{ route('store.amenitie') }}" class="forms-sample">
-            @csrf
+			<h6 class="card-title">Edit Amenities   </h6>
+			<form id="myForm" method="POST" action="{{ route('update.amenitie') }}" class="forms-sample">
+				@csrf
  
-				<div class="from-group mb-3">
+    <input type="hidden" name="id" value="{{ $amenities->id }}">
+				<div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">Amenities Name   </label>
-                                         <input type="text" name="amenitis_name" class="form-control" >
+	  <input type="text" name="amenitis_name" class="form-control" value="{{ $amenities->amenitis_name }}" >
+           
 				</div>
 			 
 				 
@@ -35,6 +37,7 @@
           <!-- right wrapper end -->
         </div>
 			</div>
+ 
 <script type="text/javascript">
     $(document).ready(function (){
         $('#myForm').validate({
@@ -66,4 +69,3 @@
     
 </script>
 @endsection
-     
