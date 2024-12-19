@@ -50,6 +50,9 @@ Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name
 }); //End Group Agent Middleware
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
+  /// Admin Group Middleware 
+Route::middleware(['auth','role:admin'])->group(function(){
+    
 // Property Type All Route 
 Route::controller(PropertyTypeController::class)->group(function(){
 

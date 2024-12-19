@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <!-- End fonts -->
 
+ 
 	<!-- core:css -->
 	<link rel="stylesheet" href="{{ asset('../assets/vendors/core/core.css') }}">
 	<!-- endinject -->
