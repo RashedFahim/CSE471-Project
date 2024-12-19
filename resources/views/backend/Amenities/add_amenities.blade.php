@@ -1,7 +1,9 @@
 @extends('admin.admin_dashboard')
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 <div class="page-content">
+
        
         <div class="row profile-body">
           <!-- left wrapper start -->
@@ -12,21 +14,31 @@
             <div class="row">
              <div class="card">
               <div class="card-body">
+
 			<h6 class="card-title">Add Amenities   </h6>
-            <form id="myForm" method="POST" action="{{ route('store.amenitie') }}" class="forms-sample">
-            @csrf
+
+			<form id="myForm" method="POST" action="{{ route('store.amenitie') }}" class="forms-sample">
+				@csrf
  
-				<div class="from-group mb-3">
+
+				<div class="form-group mb-3">
  <label for="exampleInputEmail1" class="form-label">Amenities Name   </label>
-                                         <input type="text" name="amenitis_name" class="form-control" >
+					 <input type="text" name="amenitis_name" class="form-control" >
+           
 				</div>
+
 			 
 				 
 	 <button type="submit" class="btn btn-primary me-2">Save Changes </button>
 			 
 			</form>
+
               </div>
             </div>
+
+
+
+
             </div>
           </div>
           <!-- middle wrapper end -->
@@ -34,7 +46,11 @@
          
           <!-- right wrapper end -->
         </div>
+
 			</div>
+ 
+
+
 <script type="text/javascript">
     $(document).ready(function (){
         $('#myForm').validate({
@@ -42,6 +58,7 @@
                 amenitis_name: {
                     required : true,
                 },
+
                 
             },
             messages :{
@@ -49,6 +66,7 @@
                     required : 'Please Enter Amenities Name',
                 }, 
                  
+
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {
@@ -65,5 +83,5 @@
     });
     
 </script>
+
 @endsection
-     

@@ -1,11 +1,15 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+
+
 <div class="page-content">
+
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
 	  <a href="{{ route('add.amenitie') }}" class="btn btn-inverse-info"> Add Amenities    </a>
 					</ol>
 				</nav>
+
 				<div class="row">
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
@@ -39,5 +43,15 @@
             </div>
 					</div>
 				</div>
+
 			</div>
+
+
+
+
+
+
+
+
+
 @endsection
