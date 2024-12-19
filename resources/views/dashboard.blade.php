@@ -21,6 +21,14 @@
         <section class="sidebar-page-container blog-details sec-pad-2">
             <div class="auto-container">
                 <div class="row clearfix">
+
+        
+        @php 
+
+            $id = Auth::user()->id;
+            $userData=App\Models\User::find($id);
+
+        @endphp
                     
 
 
@@ -39,31 +47,19 @@
                     <div class="post-inner">
                         <div class="post">
                             <figure class="post-thumb"><a href="blog-details.html">
-       <img src="assets/images/news/post-1.jpg" alt=""></a></figure>
-        <h5><a href="blog-details.html">Kazi Ariyan </a></h5>
-         <p>user@gmail.com </p>
+       <img src="{{ (!empty($userData->photo)) ? 
+                url('upload/admin_images/'.$userData->photo) : url('upload/image1.jpg') }}" alt=""></a></figure>
+        <h5><a href="blog-details.html"> {{$userData->name}} </a></h5>
+         <p>{{$userData->email}} </p>
                         </div> 
                     </div>
                 </div> 
        
         <div class="sidebar-widget category-widget">
             <div class="widget-title">
-                <h4>Category</h4>
+ 
             </div>
-            <div class="widget-content">
-                <ul class="category-list ">
-                   
-    <li class="current">  <a href="blog-details.html"><i class="fab fa fa-envelope "></i> Dashboard </a></li>
-
-
-    <li><a href="blog-details.html"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
-    <li><a href="blog-details.html"><i class="fa fa-credit-card" aria-hidden="true"></i> Buy credits<span class="badge badge-info">( 10 credits)</span></a></li>
-    <li><a href="blog-details.html"><i class="fa fa-list-alt" aria-hidden="true"></i></i> Properties </a></li>
-    <li><a href="blog-details.html"><i class="fa fa-indent" aria-hidden="true"></i> Add a Property  </a></li>
-    <li><a href="blog-details.html"><i class="fa fa-key" aria-hidden="true"></i> Security </a></li>
-    <li><a href="blog-details.html"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i> Logout </a></li>
-                </ul>
-            </div>
+        @include('frontend.dashboard.dashboard_sidebar')  
           </div> 
                          
                         </div>
@@ -79,14 +75,7 @@
                                     
                                     <div class="lower-content">
                                         <h3>Including Animation In Your Design System.</h3>
-                                        <ul class="post-info clearfix">
-                                            <li class="author-box">
-                                                <figure class="author-thumb"><img src="assets/images/news/author-1.jpg" alt=""></figure>
-                                                <h5><a href="blog-details.html">Eva Green</a></h5>
-                                            </li>
-                                            <li>April 10, 2020</li>
-                                        </ul>
-                                      
+                                        
           
 
 
