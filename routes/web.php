@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\PropertyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,11 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
         Route::get('/delete/amenitie/{id}', 'DeleteAmenitie')->name('delete.amenitie');  
    
    });
+    // Property All Route 
+Route::controller(PropertyController::class)->group(function(){
+    Route::get('/all/property', 'AllProperty')->name('all.property');
+    Route::get('/add/property', 'AddProperty')->name('add.property');
+
 
    }); // End Group Admin Middleware
 
