@@ -1,5 +1,7 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <div class="page-content">
 
     <div class="row profile-body">
@@ -56,7 +58,7 @@
   
                                   <h6 class="card-title">Update Admin Profile</h6>
   
-                                  <form class="forms-sample">
+                                  <form method="POST" action="{{ route('admin.profile.store') }}" class="forms-sample">
                                       <div class="mb-3">
                                           <label for="exampleInputUsername1" class="form-label">Username</label>
                                           <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value={{ $profileData->username }}>
@@ -79,16 +81,17 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Photo</label>
-                                        <input class="form-control" name="photo" type="file" id="formFile">
+                                        <input class="form-control" name="photo" type="file" id="image">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Photo</label>
-                                        <input class="form-control" name="photo" type="file" id="formFile">
+                                        <label for="exampleInputEmail1" class="form-label"> </label>
+                                        <img id="showImage" class="wd-80 rounded-circle" src="{{ (!empty($profileData->photo)) ? 
+                                        url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" alt="profile">
                                     </div>
                                      
-                                      <button type="submit" class="btn btn-primary me-2">Submit</button>
-                                      <button class="btn btn-secondary">Cancel</button>
+                                      <button type="submit" class="btn btn-primary me-2">Save Changes</button>
+                                  
                                   </form>
   
                 </div>
@@ -103,7 +106,17 @@
 
         </div>
 
-
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#image').change(function(e){
+      var reader = new FileReader();
+      reader.onload = function(e){
+        $('#showImage').attr('src',e.target.result);
+      }
+      reader.readAsDataURL(e.target.files['0']);
+    });
+  });
+</script>
 
 
 @endsection 
