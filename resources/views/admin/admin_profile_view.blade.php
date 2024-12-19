@@ -62,23 +62,23 @@
                                     @csrf
                                       <div class="mb-3">
                                           <label for="exampleInputUsername1" class="form-label">Username</label>
-                                          <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value={{ $profileData->username }}>
+                                          <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->username }}">
                                       </div>
                                       <div class="mb-3">
                                           <label for="exampleInputEmail1" class="form-label">Name</label>
-                                          <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value={{ $profileData->name }}>
+                                          <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->name }}">
                                       </div>
                                       <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value={{ $profileData->email }}>
+                                        <input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->email }}">
                                       </div>
                                       <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Phone</label>
-                                        <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value={{ $profileData->phone }}>
+                                        <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->phone }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Address</label>
-                                        <input type="text" name="address" class="form-control" id="exampleInputUsername1" autocomplete="off" value={{ $profileData->address }}>
+                                        <input type="text" name="address" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->address }}">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Photo</label>
