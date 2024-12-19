@@ -9,5 +9,4 @@ class Amenities extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
 }
