@@ -65,7 +65,7 @@
          <div class="inner-box">
              <h4>Agent Register </h4>
             
-             <form action="{{ route('register') }}" method="post" class="default-form">
+             <form action="{{ route('agent.register') }}" method="post" class="default-form">
                  @csrf
 
 
