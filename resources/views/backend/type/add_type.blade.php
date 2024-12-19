@@ -1,74 +1,62 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 <div class="page-content">
 
-				<nav class="page-breadcrumb">
-					<ol class="breadcrumb">
-	  <a href="{{ route('add.type') }}" class="btn btn-inverse-info"> Add Property Type  </a>
-					</ol>
-				</nav>
-
-				<div class="row">
-					<div class="col-md-12 grid-margin stretch-card">
-            <div class="card">
+       
+        <div class="row profile-body">
+          <!-- left wrapper start -->
+          
+          <!-- left wrapper end -->
+          <!-- middle wrapper start -->
+          <div class="col-md-8 col-xl-8 middle-wrapper">
+            <div class="row">
+             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Property Type All </h6>
-               
-                <div class="table-responsive">
-                  <table id="dataTableExample" class="table">
-                    <thead>
-                      <tr>
-                        <th>Sl </th>
-                        <th>Type Name </th>
-                        <th>Type Icon </th>
-                        <th>Action </th> 
-                      </tr>
-                    </thead>
-                    <tbody>
-                   @foreach($types as $key => $item)
-                      <tr>
-                        <td>{{ $key+1 }}</td>
-                        <td>{{ $item->type_name }}</td>
-                        <td>{{ $item->type_icon }}</td>
-         
 
-                        <td>
+			<h6 class="card-title">Add Property Type   </h6>
 
-        @if(Auth::user()->can('edit.type'))                   
-       <a href="{{ route('edit.type',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
-       @endif
-        @if(Auth::user()->can('delete.type'))
-       <a href="{{ route('delete.type',$item->id) }}" class="btn btn-inverse-danger" id="delete"> Delete  </a>
-        @endif
-                        </td> 
-                      </tr>
-                     @endforeach
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-					</div>
+			<form method="POST" action="{{ route('store.type') }}" class="forms-sample">
+				@csrf
+ 
+
+				<div class="mb-3">
+ <label for="exampleInputEmail1" class="form-label">Type Name   </label>
+					 <input type="text" name="type_name" class="form-control @error('type_name') is-invalid @enderror " >
+           @error('type_name')
+           <span class="text-danger">{{ $message }}</span>
+           @enderror
 				</div>
 
+			 	<div class="mb-3">
+ <label for="exampleInputEmail1" class="form-label">Type Icon   </label>
+					 <input type="text" name="type_icon" class="form-control @error('type_icon') is-invalid @enderror " >
+           @error('type_icon')
+           <span class="text-danger">{{ $message }}</span>
+           @enderror
+				</div> 
+				 
+	 <button type="submit" class="btn btn-primary me-2">Save Changes </button>
+			 
+			</form>
+
+              </div>
+            </div>
+
+
+
+
+            </div>
+          </div>
+          <!-- middle wrapper end -->
+          <!-- right wrapper start -->
+         
+          <!-- right wrapper end -->
+        </div>
+
 			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 @endsection
