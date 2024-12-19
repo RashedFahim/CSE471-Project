@@ -135,4 +135,4 @@ User Login | Easy RealEstate
      </section>
      <!-- subscribe-section end -->
 
-       @endsection
+@endsection
