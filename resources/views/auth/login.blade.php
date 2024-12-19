@@ -51,6 +51,9 @@
                                             <div class="form-group">
                                                 <label>Password</label>
                                                 <input type="password" name="password" id="password" required="">
+                                                <small style="color:red ; font-size: 0.9rem;">
+                                                Your password should be at least 8 characters/numbers.
+                                                </small>
                                             </div>
                                             <div class="form-group message-btn">
                                                 <button type="submit" class="theme-btn btn-one">Sign in</button>
@@ -83,6 +86,9 @@
                                             <div class="form-group">
                                                 <label>Confirm Password</label>
                                                 <input type="password" name="password_confirmation" id="password_confirmation" required="">
+                                                <small style="color:red ; font-size: 0.9rem;">
+                                                Your password should be at least 8 characters/numbers.
+                                                </small>
                                             </div>
                                             <div class="form-group message-btn">
                                                 <button type="submit" class="theme-btn btn-one">Register</button>
