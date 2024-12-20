@@ -21,7 +21,12 @@ public function AdminLogout(Request $request){
 
         $request->session()->regenerateToken();
 
-        return redirect('/admin/login');
+        $notification = array(
+            'message' => 'Admin Logged Out Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect('/admin/login')->with($notification);
     }
     public function AdminLogin(){
         return view('admin.admin_login');
