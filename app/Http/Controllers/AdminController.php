@@ -113,7 +113,7 @@ public function AdminLogout(Request $request){
   public function StoreAgent(Request $request){
 
     User::insert([
-        'name' => $request->name->nullable(),
+        'name' => $request->name,
         'email' => $request->email,
         'phone' => $request->phone,
         'address' => $request->address,
