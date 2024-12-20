@@ -5,6 +5,7 @@ use Some\Other\Class;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use illuminate\Http\Request;
 
 class UserController {
 
@@ -22,6 +23,7 @@ class UserController {
 
     }//End Method
 
+    //startmethod
     public function UserProfileStore(Request $request){
         $id = Auth::user()->id;
         $data = User::find($id);
@@ -46,7 +48,9 @@ class UserController {
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
-    }
+    } //endmethod
+
+
     public function UserLogout(Request $request){
         Auth::guard('web')->logout();
 
