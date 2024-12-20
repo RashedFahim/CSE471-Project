@@ -59,7 +59,7 @@ Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name(
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
   /// Admin Group Middleware 
   Route::middleware(['auth','roles:admin'])->group(function(){ 
-
+  });
 
     // Property Type All Route 
    Route::controller(PropertyTypeController::class)->group(function(){
