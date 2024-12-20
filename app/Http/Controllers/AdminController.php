@@ -98,4 +98,11 @@ public function AdminLogout(Request $request){
         );
         return back()->with($notification);
     }
+
+    //Agent User All method
+
+  public function AllAgent(){
+    $allagent = User::where('role','agent')->get();
+    return view('backend.agentuser.all_agent',compact('allagent'));
+  }
 }

@@ -79,3 +79,9 @@ Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name(
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
 
 
+
+
+//Agent All Route from admin
+Route::controller(AdminController::class)->group(function(){
+   Route::get('/all/agent', 'AllAgent')->name('all.agent');
+});
