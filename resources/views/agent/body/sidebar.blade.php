@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
       <a href="#" class="sidebar-brand">
-        Real<span>Easy</span>
+        Easy<span>Agent</span>
       </a>
       <div class="sidebar-toggler not-active">
         <span></span>
@@ -18,27 +18,26 @@
             <span class="link-title">Dashboard</span>
           </a>
         </li>
-        <li class="nav-item nav-category">web apps</li>
+        <li class="nav-item nav-category">RealEstate</li>
+
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
-            <i class="link-icon" data-feather="mail"></i>
-            <span class="link-title">Email</span>
-            <i class="link-arrow" data-feather="chevron-down"></i>
+          <a class="nav-link" data-bs-toggle="collapse" href="#property" role ="button" aria-expanded="false" aria-controls="emails">
+          <i class="link-icon" data-feather="mail"></i>
+          <span class="link-title">Property </span>
+          <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
-          <div class="collapse" id="emails">
+          <div class="collapse" id="property">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="pages/email/inbox.html" class="nav-link">Inbox</a>
+                <span class="nav-link">All Property</span>
               </li>
               <li class="nav-item">
-                <a href="pages/email/read.html" class="nav-link">Read</a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/email/compose.html" class="nav-link">Compose</a>
+                <span class="nav-link">Add Property</span>
               </li>
             </ul>
           </div>
         </li>
+        
         
 
         <li class="nav-item">
