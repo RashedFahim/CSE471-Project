@@ -72,7 +72,6 @@ class PropertyTypeController extends Controller
         );
 
         return redirect()->route('all.type')->with($notification);
-
     }// End Method 
 
 
@@ -93,6 +92,7 @@ class PropertyTypeController extends Controller
      ///////////// Amenitites All Method //////////////
 
 
+     
     public function AllAmenitie(){
 
         $amenities = Amenities::latest()->get();
