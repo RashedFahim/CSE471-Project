@@ -28,7 +28,7 @@ class PropertyTypeController extends Controller
 
         //validation
         $request->validate([
-            'type_name'=>'required|unique:property_types',
+            'type_name'=>'required|unique:property_types|max:200',
             'type_icon'=> 'required'
 
         ]);
