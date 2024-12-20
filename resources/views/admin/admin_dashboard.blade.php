@@ -82,5 +82,37 @@
   <script src="{{ asset('backend/assets/js/dashboard-dark.js') }}"></script>
 	<!-- End custom js for this page -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="{{ asset('backend/assets/js/code/code.js') }}"></script>
+
 </body>
 </html>   
