@@ -23,6 +23,7 @@ class UserController {
 
     }//End Method
 
+    //startmethod
     public function UserProfileStore(Request $request){
         $id = Auth::user()->id;
         $data = User::find($id);
@@ -46,8 +47,11 @@ class UserController {
             'message' => 'User Profile Updated Successfully',
             'alert-type' => 'success'
         );
+
         return redirect()->back()->with($notification);
-    }
+    } //endmethod
+
+
     public function UserLogout(Request $request){
         Auth::guard('web')->logout();
 
@@ -55,8 +59,51 @@ class UserController {
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        $notification = array(
+            'message' => 'User Logout Successfully',
+            'alert-type' => 'success'
+        );
+        
+
+        return redirect('/login')->with($notification);
     }
+
+    public function UserChangePassword(){
+
+        return view('frontend.dashboard.change_password');
+
+    }
+
+
+    public function UserPasswordUpdate(Request $request){
+        //Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed'
+        ]);
+
+        //Match the old password
+        if (!Hash::check($request->old_password, auth::user()->password)){
+            $notification = array(
+                'message' => 'Old Password Does Not Match!',
+                'alert-type' => 'error'
+            );
+        return back()->with($notification);
+        }
+
+        //Update the new password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+         $notification = array(
+            'message' => 'Password Changed Successfully',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
+    }
+
+
+
 }
 
 

@@ -84,7 +84,7 @@
                                       
           
  <form action="{{ route('user.profile.store') }}" method="post" class="default-form" enctype="multipart/form-data">
-    @csrf
+ @csrf
         <div class="form-group">
             <label>Username</label>
             <input type="text" name="username" value="{{$userData->username}}">
