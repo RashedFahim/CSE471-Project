@@ -25,7 +25,7 @@
             <span class="link-title">Property Type</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
-          <div class="collapse" id="emails">
+          <div class="collapse" id="property">
             <ul class="nav sub-menu">
               <li class="nav-item">
                 <a href="{{ route('all.type') }}" class="nav-link">All Type</a>
@@ -61,7 +61,6 @@
 
 
         
-
         <li class="nav-item">
           <a href="pages/apps/calendar.html" class="nav-link">
             <i class="link-icon" data-feather="calendar"></i>
