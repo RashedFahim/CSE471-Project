@@ -71,8 +71,11 @@ Route::get('/agent/change/password', [AgentController::class, 'AgentChangePasswo
 Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 
 }); //End Group Agent Middleware
-Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login')->middleware(RedirectIfAuthenticated::class);
+Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name('agent.register'); 
 
+
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
 Route::middleware(['auth','roles:admin'])->group(function(){ 
 });
 
@@ -102,8 +105,11 @@ Route::controller(PropertyTypeController::class)->group(function(){
 });
 // Property All Route 
 Route::controller(PropertyController::class)->group(function(){
-Route::get('/all/property', 'AllProperty')->name('all.property');
-Route::get('/add/property', 'AddProperty')->name('add.property');
+    Route::get('/all/property', 'AllProperty')->name('all.property');
+    Route::get('/add/property', 'AddProperty')->name('add.property');
+    Route::get('/edit/property/{id}', 'EditProperty')->name('edit.property');
+    Route::get('/delete/property/{id}', 'DeleteProperty')->name('delete.property');
+    Route::get('/details/property/{id}', 'DetailsProperty')->name('details.property');
 
 
 }); // End Group Admin Middleware
@@ -112,4 +118,6 @@ Route::get('/add/property', 'AddProperty')->name('add.property');
 //Agent All Route from admin
 Route::controller(AdminController::class)->group(function(){
     Route::get('/all/agent', 'AllAgent')->name('all.agent');
+    Route::get('/add/agent', 'AddAgent')->name('add.agent');
+    Route::post('/store/agent', 'StoreAgent')->name('store.agent');
  });
