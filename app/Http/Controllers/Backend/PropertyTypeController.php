@@ -92,6 +92,7 @@ class PropertyTypeController extends Controller
      ///////////// Amenitites All Method //////////////
 
 
+     
     public function AllAmenitie(){
 
         $amenities = Amenities::latest()->get();
