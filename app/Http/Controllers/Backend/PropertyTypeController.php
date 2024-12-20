@@ -28,12 +28,12 @@ class PropertyTypeController extends Controller
 
         //validation
         $request->validate([
-            'type_name'=>'required|unique:property_types',
+            'type_name'=>'required|unique:property_types|max:200',
             'type_icon'=> 'required'
 
         ]);
 
-        propertyType::insert([
+        PropertyType::insert([
 
             'type_name'=> $request->type_name,
             'type_icon'=> $request->type_icon,
