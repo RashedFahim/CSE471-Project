@@ -9,7 +9,6 @@ use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\UserController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,43 +71,45 @@ Route::get('/agent/change/password', [AgentController::class, 'AgentChangePasswo
 Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassword'])->name('agent.update.password');
 
 }); //End Group Agent Middleware
-Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login')->middleware(RedirectIfAuthenticated::class);
-Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name('agent.register');
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
+Route::middleware(['auth','roles:admin'])->group(function(){ 
+});
+
+// Property Type All Route 
+Route::controller(PropertyTypeController::class)->group(function(){
+   
+    Route::get('/all/type', 'AllType')->name('all.type')->middleware('permission:all.type'); 
+    Route::get('/add/type', 'AddType')->name('add.type')->middleware('permission:add.type');
+    Route::post('/store/type', 'StoreType')->name('store.type'); 
+    Route::get('/edit/type/{id}', 'EditType')->name('edit.type');
+    Route::post('/update/type', 'UpdateType')->name('update.type');
+    Route::get('/delete/type/{id}', 'DeleteType')->name('delete.type');  
+
+});
 
 
-Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
+// Amenities Type All Route 
+Route::controller(PropertyTypeController::class)->group(function(){
+
+    Route::get('/all/amenitie', 'AllAmenitie')->name('all.amenitie'); 
+    Route::get('/add/amenitie', 'AddAmenitie')->name('add.amenitie');
+    Route::post('/store/amenitie', 'StoreAmenitie')->name('store.amenitie'); 
+    Route::get('/edit/amenitie/{id}', 'EditAmenitie')->name('edit.amenitie');
+    Route::post('/update/amenitie', 'UpdateAmenitie')->name('update.amenitie');
+    Route::get('/delete/amenitie/{id}', 'DeleteAmenitie')->name('delete.amenitie');  
+
+});
+// Property All Route 
+Route::controller(PropertyController::class)->group(function(){
+Route::get('/all/property', 'AllProperty')->name('all.property');
+Route::get('/add/property', 'AddProperty')->name('add.property');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}); // End Group Admin Middleware
 
 
 //Agent All Route from admin
 Route::controller(AdminController::class)->group(function(){
-   Route::get('/all/agent', 'AllAgent')->name('all.agent');
-});
+    Route::get('/all/agent', 'AllAgent')->name('all.agent');
+ });
