@@ -33,6 +33,8 @@ public function AdminLogout(Request $request){
         $profileData = User::find($id);
         return view('admin.admin_profile_view',compact('profileData'));
     }
+
+    //startmethod
     public function AdminProfileStore(Request $request){
         $id = Auth::user()->id;
         $data = User::find($id);
@@ -57,7 +59,7 @@ public function AdminLogout(Request $request){
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
-    }
+    } //endmethod
 
     public function AdminChangePassword(){
         $id = Auth::user()->id;
