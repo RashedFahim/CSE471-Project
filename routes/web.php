@@ -7,6 +7,7 @@ use App\Http\Controllers\AgentController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\UserController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
