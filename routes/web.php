@@ -81,6 +81,23 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 
 
 
+ /// Admin Group Middleware 
+ Route::middleware(['auth','roles:admin'])->group(function(){ 
+
+
+  // Property Type All Route 
+ Route::controller(PropertyTypeController::class)->group(function(){
+
+      Route::get('/all/type', 'AllType')->name('all.type'); 
+      Route::get('/add/type', 'AddType')->name('add.type');
+      Route::post('/store/type', 'StoreType')->name('store.type'); 
+      Route::get('/edit/type/{id}', 'EditType')->name('edit.type');
+      Route::post('/update/type', 'UpdateType')->name('update.type');
+
+ });
+
+ 
+ }); // End Group Admin Middlewar
 
 
 
@@ -100,19 +117,4 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 
 
 
-
-  /// Admin Group Middleware 
-  Route::middleware(['auth','roles:admin'])->group(function(){ 
-
-
-    // Property Type All Route 
-   Route::controller(PropertyTypeController::class)->group(function(){
-
-        Route::get('/all/type', 'AllType')->name('all.type'); 
-        Route::get('/add/type', 'AddType')->name('add.type');
-        Route::post('/store/type', 'StoreType')->name('store.type'); 
-
-   });
-
-   
-   }); // End Group Admin Middlewar
+ 

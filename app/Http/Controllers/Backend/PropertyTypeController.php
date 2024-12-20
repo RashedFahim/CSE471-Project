@@ -72,7 +72,6 @@ class PropertyTypeController extends Controller
         );
 
         return redirect()->route('all.type')->with($notification);
-
     }// End Method 
 
 
