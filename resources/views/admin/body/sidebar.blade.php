@@ -32,7 +32,6 @@
               </li>
               <li class="nav-item">
                 <a href="pages/email/read.html" class="nav-link">Add Type</a>
-             
               </li>
 
             </ul>

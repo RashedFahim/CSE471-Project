@@ -57,36 +57,40 @@ Route::post('/agent/register', [AgentController::class, 'AgentRegister'])->name(
 
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /// Admin Group Middleware 
-  Route::middleware(['auth','roles:admin'])->group(function(){ 
- // Property Type All Route 
- Route::controller(PropertyTypeController::class)->group(function(){
-
-    Route::get('/all/type', 'AllType')->name('all.type')->middleware('permission:all.type'); 
-    Route::get('/add/type', 'AddType')->name('add.type')->middleware('permission:add.type');
-    Route::post('/store/type', 'StoreType')->name('store.type'); 
-    Route::get('/edit/type/{id}', 'EditType')->name('edit.type');
-    Route::post('/update/type', 'UpdateType')->name('update.type');
-    Route::get('/delete/type/{id}', 'DeleteType')->name('delete.type');  
-
-});
+  Route::middleware(['auth','role:admin'])->group(function(){ 
 
 
-// Amenities Type All Route 
-Route::controller(PropertyTypeController::class)->group(function(){
+    // Property Type All Route 
+   Route::controller(PropertyTypeController::class)->group(function(){
 
-    Route::get('/all/amenitie', 'AllAmenitie')->name('all.amenitie'); 
-    Route::get('/add/amenitie', 'AddAmenitie')->name('add.amenitie');
-    Route::post('/store/amenitie', 'StoreAmenitie')->name('store.amenitie'); 
-    Route::get('/edit/amenitie/{id}', 'EditAmenitie')->name('edit.amenitie');
-    Route::post('/update/amenitie', 'UpdateAmenitie')->name('update.amenitie');
-    Route::get('/delete/amenitie/{id}', 'DeleteAmenitie')->name('delete.amenitie');  
+        Route::get('/all/type', 'AllType')->name('all.type');  
 
-});
+   });
 
-
-// Property All Route 
-Route::controller(PropertyController::class)->group(function(){
-});
-
-});
+   
+   }); // End Group Admin Middlewar
