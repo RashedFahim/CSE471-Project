@@ -59,7 +59,7 @@ class PropertyTypeController extends Controller
 
         //validation
         $request->validate([
-            'type_name'=>'required|unique:property_types|max:200',
+            'type_name'=>'required|unique:property_types',
             'type_icon'=> 'required'
 
         ]);
@@ -103,6 +103,7 @@ class PropertyTypeController extends Controller
         );
 
         return redirect()->route('all.type')->with($notification);
+
     }// End Method 
 
 
@@ -123,7 +124,6 @@ class PropertyTypeController extends Controller
      ///////////// Amenitites All Method //////////////
 
 
-     
     public function AllAmenitie(){
 
         $amenities = Amenities::latest()->get();
