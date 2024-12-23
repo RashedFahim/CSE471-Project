@@ -165,7 +165,4 @@ Route::controller(AgentPropertyController::class)->group(function(){
   Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);  
   Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
 
-}); // End Group Admin Middleware
-
-
  
