@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PropertyType extends Model
 {
     use HasFactory; 
-    protected $guarded = []; 
+    protected $table = 'property_types'; // Explicitly define the table name
+    protected $fillable = ['type_name', 'type_icon']; // Allow mass assignment
+
 }

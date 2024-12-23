@@ -59,8 +59,7 @@
             </div>
           </li>
 
-
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#property" role="button" aria-expanded="false" aria-controls="emails">
               <i class="link-icon" data-feather="mail"></i>
               <span class="link-title">Property  </span>
@@ -72,12 +71,17 @@
                   <a href="{{ route('all.property') }}" class="nav-link">All Property</a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('add.property') }}" class="nav-link">Add Property</a>
+                <a href="{{ route('add.property') }}" class="nav-link">Add Property</a>
                 </li>
-                
-              </ul>
+                </ul>
             </div>
           </li>
+                
+              
+
+
+
+
           
           <li class="nav-item">
             <a href="pages/apps/calendar.html" class="nav-link">

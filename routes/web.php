@@ -9,8 +9,6 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Agent\AgentPropertyController;
 use App\Http\Controllers\Frontend\IndexController;
-use App\Http\Controllers\Frontend\WishlistController;
-use App\Http\Controllers\Frontend\CompareController;
    
 /*   
 |--------------------------------------------------------------------------
@@ -36,24 +34,7 @@ Route::middleware('auth')->group(function () {
  Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout'); 
  Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password'); 
   Route::post('/user/password/update', [UserController::class, 'UserPasswordUpdate'])->name('user.password.update');
- // User WishlistAll Route 
-Route::controller(WishlistController::class)->group(function(){
-
-     Route::get('/user/wishlist', 'UserWishlist')->name('user.wishlist');
-     Route::get('/get-wishlist-property', 'GetWishlistProperty');
-      Route::get('/wishlist-remove/{id}', 'WishlistRemove');  
-
-
-});
- // User Compare All Route 
-Route::controller(CompareController::class)->group(function(){
-
-     Route::get('/user/compare', 'UserCompare')->name('user.compare');  
-     Route::get('/get-compare-property', 'GetCompareProperty');
-     Route::get('/compare-remove/{id}', 'CompareRemove');
-
-
-});
+ 
 });
 require __DIR__.'/auth.php';
  /// Admin Group Middleware 
@@ -88,8 +69,8 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
     // Property Type All Route 
    Route::controller(PropertyTypeController::class)->group(function(){
    
-        Route::get('/all/type', 'AllType')->name('all.type')->middleware('permission:all.type'); 
-        Route::get('/add/type', 'AddType')->name('add.type')->middleware('permission:add.type');
+        Route::get('/all/type', 'AllType')->name('all.type');
+        Route::get('/add/type', 'AddType')->name('add.type');
         Route::post('/store/type', 'StoreType')->name('store.type'); 
         Route::get('/edit/type/{id}', 'EditType')->name('edit.type');
         Route::post('/update/type', 'UpdateType')->name('update.type');
