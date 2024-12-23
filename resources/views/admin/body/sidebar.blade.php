@@ -20,21 +20,25 @@
           </a>
         </li>
         <li class="nav-item nav-category">RealEstate</li>
+<<<<<<<<< Temporary merge branch 1
 
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#property" role ="button" aria-expanded="false" aria-controls="emails">
           <i class="link-icon" data-feather="mail"></i>
           <span class="link-title">Property Type </span>
           <i class="link-arrow" data-feather="chevron-down"></i>
+=========
+>>>>>>>>> Temporary merge branch 2
           </a>
           <div class="collapse" id="property">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="{{ route('all.type') }}" class="nav-link">All Type</a>
+<<<<<<<<< Temporary merge branch 1
+                <span class="nav-link">All Type</span>
               </li>
               <li class="nav-item">
-                <a href="pages/email/read.html" class="nav-link">Add Type</a>      
-              </li>        	      
+                <span class="nav-link">Add Type</span>
+              </li>
             </ul>
           </div>
         </li>
@@ -48,10 +52,11 @@
           <div class="collapse" id="property">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="{{ route('all.amenitie') }}" class="nav-link">All Amenitie</a>
+                <span class="nav-link">All Amenities</span>
               </li>
               <li class="nav-item">
-                <a href="pages/email/read.html" class="nav-link">Add Amenitie</a>                                	      </li>
+                <span class="nav-link">Add Amenities</span>
+              </li>
             </ul>
           </div>
         </li>
@@ -69,10 +74,41 @@
               </li>
               <li class="nav-item">
                 <span class="nav-link">Add Property</span>
+=========
+                <a href="{{ route('all.type') }}" class="nav-link">All Type</a>
               </li>
+              <li class="nav-item">
+                <a href="pages/email/read.html" class="nav-link">Add Type</a>
+             
+>>>>>>>>> Temporary merge branch 2
+              </li>
+
             </ul>
           </div>
-        </li>
+          </li>
+
+          
+           <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#amenitie" role="button" aria-expanded="false" aria-controls="emails">
+              <i class="link-icon" data-feather="mail"></i>
+              <span class="link-title">Amenitie  </span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="amenitie">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="{{ route('all.amenitie') }}" class="nav-link">All Amenitie</a>
+                </li>
+                <li class="nav-item">
+                  <a href="pages/email/read.html" class="nav-link">Add Amenitie</a>
+                </li>
+                
+              </ul>
+            </div>
+          </li>
+
+
+
         
         <li class="nav-item">
           <a href="pages/apps/calendar.html" class="nav-link">
@@ -80,20 +116,20 @@
             <span class="link-title">Calendar</span>
           </a>
         </li>
-        <li class="nav-item nav-category">User All Function</li>
+        <li class="nav-item nav-category">Components</li>
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
             <i class="link-icon" data-feather="feather"></i>
-            <span class="link-title">Manage Agent</span>
+            <span class="link-title">UI Kit</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
           </a>
           <div class="collapse" id="uiComponents">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <a href="{{ route('all.agent') }}" class="nav-link">All Agents</a>
+                <a href="pages/ui-components/accordion.html" class="nav-link">Accordion</a>
               </li>
               <li class="nav-item">
-                <a href="pages/ui-components/alerts.html" class="nav-link">Add Agent</a>
+                <a href="pages/ui-components/alerts.html" class="nav-link">Alerts</a>
               </li>
              
             </ul>

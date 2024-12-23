@@ -6,7 +6,7 @@
 
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
-	  <a href="{{ route('add.type') }}" class="btn btn-inverse-info"> Add Property Type  </a>
+	  <a href= "{{ route('add.type') }}" class="btn btn-inverse-info"> Add Property Type  </a>
 					</ol>
 				</nav>
 
@@ -35,13 +35,10 @@
          
 
                         <td>
-
-        @if(Auth::user()->can('edit.type'))                   
+                  
        <a href="{{ route('edit.type',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
-       @endif
-        @if(Auth::user()->can('delete.type'))
        <a href="{{ route('delete.type',$item->id) }}" class="btn btn-inverse-danger" id="delete"> Delete  </a>
-        @endif
+   
                         </td> 
                       </tr>
                      @endforeach

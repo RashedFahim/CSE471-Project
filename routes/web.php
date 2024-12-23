@@ -100,9 +100,9 @@ Route::controller(PropertyTypeController::class)->group(function(){
 });
  // Property All Route 
 Route::controller(PropertyController::class)->group(function(){
-     Route::get('/all/property', 'AllProperty')->name('all.property'); 
-     Route::get('/add/property', 'AddProperty')->name('add.property');
-     Route::post('/store/property', 'StoreProperty')->name('store.property');
+    Route::get('/all/property', 'AllProperty')->name('all.property');
+    Route::get('/add/property', 'AddProperty')->name('add.property');
+    Route::post('/store/property', 'StoreProperty')->name('store.property');
      Route::get('/edit/property/{id}', 'EditProperty')->name('edit.property');
      Route::post('/update/property', 'UpdateProperty')->name('update.property');
      Route::post('/update/property/thambnail', 'UpdatePropertyThambnail')->name('update.property.thambnail');
@@ -163,4 +163,9 @@ Route::controller(AgentPropertyController::class)->group(function(){
  Route::get('/property/details/{id}/{slug}', [IndexController::class, 'PropertyDetails']);
 // Wishlist Add Route 
   Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);  
-  Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);
+  Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
+
+}); // End Group Admin Middleware
+
+
+ 

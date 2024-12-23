@@ -33,7 +33,7 @@ class PropertyTypeController extends Controller
 
         ]);
 
-        propertyType::insert([
+        PropertyType::insert([
 
             'type_name'=> $request->type_name,
             'type_icon'=> $request->type_icon,
