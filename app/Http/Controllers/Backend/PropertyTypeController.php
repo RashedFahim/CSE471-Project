@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\PropertyType;
 use App\Models\Amenities;
+use Illuminate\Support\Facades\Route;
 
 
 class PropertyTypeController extends Controller
