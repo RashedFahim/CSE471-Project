@@ -19,7 +19,7 @@ class PropertyTypeController extends Controller
 
     } // End Method 
 
-    // Method to fetch all property types
+    // For get
     public function NewType()
     {
         $types = PropertyType::all(); // Fetch all records
@@ -29,7 +29,7 @@ class PropertyTypeController extends Controller
         ]);
     }
 
-    // Method to create a new property type
+    // For post
     public function SaveType(Request $request)
     {
         $request->validate([
