@@ -24,5 +24,11 @@ class AgentPropertyController extends Controller
 
     } // End Method   
 
+    public function AgentAddProperty(){
+        $propertytype = PropertyType::latest()->get();
+        $amenities = Amenities::latest()->get();
+        return view('agent.property.add_property',compact('propertytype','amenities'));
+
+    }// End Method 
     //
 }

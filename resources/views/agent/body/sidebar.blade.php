@@ -40,7 +40,7 @@ $status = $agentId->status;
                 <a href="{{ route('agent.all.property') }}" class="nav-link">All Property</a>
               </li>
               <li class="nav-item">
-                <span class="nav-link">Add Property</span>
+                <a href="{{ route('agent.add.property') }}" class="nav-link">Add Property</a>
               </li>
             </ul>
           </div>
