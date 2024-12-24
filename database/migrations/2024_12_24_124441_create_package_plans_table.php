@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('package_plans', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->string('package_name')->nullable();
+            $table->string('package_credits')->nullable();
+            $table->string('package_amount')->nullable();
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
