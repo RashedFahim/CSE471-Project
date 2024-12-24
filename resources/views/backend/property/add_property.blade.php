@@ -16,18 +16,19 @@
        <div class="card">
     <div class="card-body">
         <h6 class="card-title">Add Property </h6>
-            <form>
 
+    <form method="post" action="{{ route('store.property') }}" id="myForm" enctype="multipart/form-data">
+        @csrf
 
     <div class="row">
         <div class="col-sm-6">
-            <div class="mb-3">
+            <div class="form-group mb-3">
                 <label class="form-label">Property Name </label>
                 <input type="text" name="property_name" class="form-control"  >
             </div>
         </div><!-- Col -->
         <div class="col-sm-6">
-            <div class="mb-3">
+            <div class="form-group mb-3">
                 <label class="form-label">Property Status</label>
                <select name="property_status" class="form-select" id="exampleFormControlSelect1">
                 <option selected="" disabled="">Select Status</option>
@@ -55,7 +56,7 @@
 
 
          <div class="col-sm-6">
-            <div class="mb-3">
+            <div class="form-group mb-3">
                 <label class="form-label">Main Thumbnail </label>
                 <input type="file" name="property_thambnail " class="form-control" onChange="mainThamUrl(this)"  >
 
@@ -68,7 +69,7 @@
 
 
          <div class="col-sm-6">
-            <div class="mb-3">
+            <div class="form-group mb-3">
                 <label class="form-label">Multiple Image </label>
                 <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple="" >
          <div class="row" id="preview_img"> </div>
@@ -227,9 +228,65 @@
              
         </div>
     </div><!-- Col -->
+
+    <hr>
+
+ <div class="mb-3">
+            <div class="form-check form-check-inline">
+<input type="checkbox" name="featured" value="1" class="form-check-input" id="checkInline1">
+                <label class="form-check-label" for="checkInline1">
+                   Featured Property 
+                </label>
+            </div>
+           
+
+         <div class="form-check form-check-inline">
+<input type="checkbox" name="hot" value="1" class="form-check-input" id="checkInline">
+                <label class="form-check-label" for="checkInline">
+                    Hot Property 
+                </label>
+            </div>
+         
+          
+        </div>
+
+        <!--   //////////// Facilities Option /////////////// -->
+
+        <div class="row add_item">
+            <div class="col-md-4">
+                  <div class="mb-3">
+                        <label for="facility_name" class="form-label">Facilities </label>
+                        <select name="facility_name[]" id="facility_name" class="form-control">
+                              <option value="">Select Facility</option>
+                              <option value="Hospital">Hospital</option>
+                              <option value="SuperMarket">Super Market</option>
+                              <option value="School">School</option>
+                              <option value="Entertainment">Entertainment</option>
+                              <option value="Pharmacy">Pharmacy</option>
+                              <option value="Airport">Airport</option>
+                              <option value="Railways">Railways</option>
+                              <option value="Bus Stop">Bus Stop</option>
+                              <option value="Beach">Beach</option>
+                              <option value="Mall">Mall</option>
+                              <option value="Bank">Bank</option>
+                        </select>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                  <div class="mb-3">
+                        <label for="distance" class="form-label"> Distance </label>
+                        <input type="text" name="distance[]" id="distance" class="form-control" placeholder="Distance (Km)">
+                  </div>
+            </div>
+            <div class="form-group col-md-4" style="padding-top: 30px;">
+                  <a class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> Add More..</a>
+            </div>
+     </div> <!---end row-->
     
+            
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+
             </form>
-      <button type="button" class="btn btn-primary submit">Submit form</button>
     </div>
 </div>
 
@@ -245,22 +302,102 @@
 
 			</div>
 
-
+ <!--========== Start of add multiple class with ajax ==============-->
+ <div style="visibility: hidden">
+    <div class="whole_extra_item_add" id="whole_extra_item_add">
+       <div class="whole_extra_item_delete" id="whole_extra_item_delete">
+          <div class="container mt-2">
+             <div class="row">
+               
+                <div class="form-group col-md-4">
+                   <label for="facility_name">Facilities</label>
+                   <select name="facility_name[]" id="facility_name" class="form-control">
+                         <option value="">Select Facility</option>
+                         <option value="Hospital">Hospital</option>
+                         <option value="SuperMarket">Super Market</option>
+                         <option value="School">School</option>
+                         <option value="Entertainment">Entertainment</option>
+                         <option value="Pharmacy">Pharmacy</option>
+                         <option value="Airport">Airport</option>
+                         <option value="Railways">Railways</option>
+                         <option value="Bus Stop">Bus Stop</option>
+                         <option value="Beach">Beach</option>
+                         <option value="Mall">Mall</option>
+                         <option value="Bank">Bank</option>
+                   </select>
+                </div>
+                <div class="form-group col-md-4">
+                   <label for="distance">Distance</label>
+                   <input type="text" name="distance[]" id="distance" class="form-control" placeholder="Distance (Km)">
+                </div>
+                <div class="form-group col-md-4" style="padding-top: 20px">
+                   <span class="btn btn-success btn-sm addeventmore"><i class="fa fa-plus-circle">Add</i></span>
+                   <span class="btn btn-danger btn-sm removeeventmore"><i class="fa fa-minus-circle">Remove</i></span>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div> 
+ 
+             <!----For Section-------->
+<script type="text/javascript">
+    $(document).ready(function(){
+       var counter = 0;
+       $(document).on("click",".addeventmore",function(){
+             var whole_extra_item_add = $("#whole_extra_item_add").html();
+             $(this).closest(".add_item").append(whole_extra_item_add);
+             counter++;
+       });
+       $(document).on("click",".removeeventmore",function(event){
+             $(this).closest("#whole_extra_item_delete").remove();
+             counter -= 1
+       });
+    });
+ </script>
+ <!--========== End of add multiple class with ajax ==============-->
+ 
+ 
  
 <script type="text/javascript">
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                amenitis_name: {
+                property_name: {
+                    required : true,
+                },
+                property_status: {
+                    required : true,
+                },
+                 lowest_price: {
+                    required : true,
+                },
+                 max_price: {
+                    required : true,
+                },
+                 ptype_id: {
                     required : true,
                 },
 
                 
             },
             messages :{
-                amenitis_name: {
-                    required : 'Please Enter Amenities Name',
+                property_name: {
+                    required : 'Please Enter Property Name',
                 }, 
+                property_status: {
+                    required : 'Please Select Property Status',
+                },
+                lowest_price: {
+                    required : 'Please Enter Lowest Price',
+                },
+                max_price: {
+                    required : 'Please Enter Max Price',
+                },
+                ptype_id: {
+                    required : 'Please Select Property Type',
+                }, 
+                 
               
                 
             },
