@@ -20,4 +20,3 @@ Route::controller(PropertyTypeController::class)->group(function () {
     Route::get('/property-types', 'NewType'); // GET all property types
     Route::post('/property-types', 'SaveType'); // POST new property type
 });
-
