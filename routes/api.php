@@ -17,6 +17,6 @@ use App\Http\Controllers\Backend\PropertyTypeController;
 
 // API Routes for PropertyType
 Route::controller(PropertyTypeController::class)->group(function () {
-    Route::get('/property-types', 'NewType'); // GET all property types
-    Route::post('/property-types', 'SaveType'); // POST new property type
+    Route::get('/property_types', 'NewType'); // GET all property types
+    Route::post('/property_types', 'SaveType'); // POST new property type
 });

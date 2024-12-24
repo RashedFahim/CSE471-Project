@@ -17,6 +17,7 @@ class PropertyTypeController extends Controller
         return view('backend.type.all_type',compact('types'));
 
     } // End Method 
+
     // Method to fetch all property types
     public function NewType()
     {
@@ -48,7 +49,7 @@ class PropertyTypeController extends Controller
     }
 
 
- public function AddType(){
+    public function AddType(){
 
         return view('backend.type.add_type');
 
