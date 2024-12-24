@@ -56,7 +56,7 @@
 
          <div class="col-sm-6">
             <div class="mb-3">
-                <label class="form-label">Main Thambnail </label>
+                <label class="form-label">Main Thumbnail </label>
                 <input type="file" name="property_thambnail " class="form-control" onChange="mainThamUrl(this)"  >
 
                 <img src="" id="mainThmb">
@@ -171,7 +171,63 @@
                 <input type="password" class="form-control" autocomplete="off" placeholder="Password">
             </div>
         </div><!-- Col -->
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="mb-3">
+                    <label class="form-label">Property Type </label>
+                    <select name="ptype_id" class="form-select" id="exampleFormControlSelect1">
+                    <option selected="" disabled="">Select Type</option>
+                   @foreach($propertytype as $ptype)
+                    <option value="{{ $ptype->id }}">{{ $ptype->type_name }}</option>
+                   @endforeach
+                </select>
+                </div>
+            </div><!-- Col -->
+            <div class="col-sm-4">
+                <div class="mb-3">
+                    <label class="form-label">Property Amenities </label>
+         <select name="amenities_id[]" class="js-example-basic-multiple form-select" multiple="multiple" data-width="100%">
+    
+                     @foreach($amenities as $ameni)
+                    <option value="{{ $ameni->amenitis_name }}">{{ $ameni->amenitis_name }}</option>
+                   @endforeach
+                    
+                </select>
+                </div>
+            </div><!-- Col -->
+            <div class="col-sm-4">
+                <div class="mb-3">
+                    <label class="form-label"> Agent </label>
+                     <select name="agent_id" class="form-select" id="exampleFormControlSelect1">
+                    <option selected="" disabled="">Select Agent</option>
+                   @foreach($activeAgent as $agent)
+                    <option value="{{ $agent->id }}">{{ $agent->name }}</option>
+                   @endforeach
+                </select>
+                </div>
+            </div><!-- Col -->
+
     </div><!-- Row -->
+
+    <div class="col-sm-12">
+        <div class="mb-3">
+            <label class="form-label">Short Description</label>
+      <textarea name="short_descp" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+             
+        </div>
+    </div><!-- Col -->
+
+    <div class="col-sm-12">
+        <div class="mb-3">
+            <label class="form-label">Long Description</label>
+
+            <textarea name="long_descp" class="form-control" name="tinymce" id="tinymceExample" rows="10"></textarea>
+             
+        </div>
+    </div><!-- Col -->
+    
             </form>
       <button type="button" class="btn btn-primary submit">Submit form</button>
     </div>
