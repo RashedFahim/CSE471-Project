@@ -15,11 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\Backend\PropertyTypeController;
 
+// API Routes for PropertyType
 Route::controller(PropertyTypeController::class)->group(function () {
-    Route::get('/new/type', 'NewType'); // Fetch all property types
-    Route::post('/save/type', 'SaveType'); // Create a new property type
+    Route::get('/property-types', 'NewType'); // GET all property types
+    Route::post('/property-types', 'SaveType'); // POST new property type
 });
-
-
-
 
