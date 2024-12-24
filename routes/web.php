@@ -31,12 +31,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware('auth')->group(function () {
- Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile'); 
-  Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
- Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout'); 
- Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password'); 
-  Route::post('/user/password/update', [UserController::class, 'UserPasswordUpdate'])->name('user.password.update');
- // User WishlistAll Route 
+Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile'); 
+Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
+Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout'); 
+Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password'); 
+Route::post('/user/password/update', [UserController::class, 'UserPasswordUpdate'])->name('user.password.update');
+
+  // User WishlistAll Route 
 Route::controller(WishlistController::class)->group(function(){
 
      Route::get('/user/wishlist', 'UserWishlist')->name('user.wishlist');

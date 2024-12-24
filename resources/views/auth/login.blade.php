@@ -20,7 +20,7 @@
         <!--End Page Title-->
 
 
-        <!-- ragister-section -->
+        <!-- register-section -->
         <section class="ragister-section centred sec-pad">
             <div class="auto-container">
                 <div class="row clearfix">
