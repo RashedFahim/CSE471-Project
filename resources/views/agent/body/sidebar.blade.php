@@ -37,7 +37,7 @@ $status = $agentId->status;
           <div class="collapse" id="property">
             <ul class="nav sub-menu">
               <li class="nav-item">
-                <span class="nav-link">All Property</span>
+                <a href="{{ route('agent.all.property') }}" class="nav-link">All Property</a>
               </li>
               <li class="nav-item">
                 <span class="nav-link">Add Property</span>

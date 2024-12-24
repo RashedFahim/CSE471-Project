@@ -154,24 +154,36 @@
         </div><!-- Col -->
         <div class="col-sm-4">
             <div class="mb-3">
-                <label class="form-label">Zip</label>
-                <input type="text" class="form-control" placeholder="Enter zip code">
+                <label class="form-label">Property Video</label>
+                <input type="text" name="property_video"  class="form-control" >
             </div>
         </div><!-- Col -->
+        <div class="col-sm-4">
+            <div class="mb-3">
+                <label class="form-label">Neighborhood</label>
+                 <input type="text" name="neighborhood"  class="form-control" >
+            </div>
+        </div><!-- Col -->
+ 
+
     </div><!-- Row -->
     <div class="row">
         <div class="col-sm-6">
             <div class="mb-3">
-                <label class="form-label">Email address</label>
-                <input type="email" class="form-control" placeholder="Enter email">
+                <label class="form-label">Latitude</label>
+                <input type="text" name="latitude" class="form-control" >
+                <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Latitude from address</a>
             </div>
         </div><!-- Col -->
         <div class="col-sm-6">
             <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" class="form-control" autocomplete="off" placeholder="Password">
+                <label class="form-label">Longitude</label>
+                <input type="text" name="longitude" class="form-control" >
+                 <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Longitude from address</a>
             </div>
         </div><!-- Col -->
+
+    </div><!-- Row -->
 
 
         <div class="row">
