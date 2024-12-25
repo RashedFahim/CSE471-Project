@@ -98,4 +98,34 @@ public function AdminLogout(Request $request){
         );
         return back()->with($notification);
     }
+
+    //Agent User All method
+
+  public function AllAgent(){
+    $allagent = User::where('role','agent')->get();
+    return view('backend.agentuser.all_agent',compact('allagent'));
+  }
+
+  public function AddAgent(){
+    return view('backend.agentuser.add_agent');
+  }
+
+  public function StoreAgent(Request $request){
+
+    User::insert([
+        'name' => $request->name,
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'address' => $request->address,
+        'password' => Hash::make($request->password),
+        'role' => 'agent',
+        'status' => 'active',
+    ]);
+
+      $notification = array(
+        'message' => 'Agent Created Successfully',
+        'alert-type' => 'success'
+      );
+      return redirect()->route('all.agent')->with($notification);
+  }
 }
