@@ -31,22 +31,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware('auth')->group(function () {
-<<<<<<< HEAD
-Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile'); 
-Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
-Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout'); 
-Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password'); 
-Route::post('/user/password/update', [UserController::class, 'UserPasswordUpdate'])->name('user.password.update');
-
-  // User WishlistAll Route 
-=======
- Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile'); 
+  Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile'); 
   Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
  Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout'); 
  Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password'); 
   Route::post('/user/password/update', [UserController::class, 'UserPasswordUpdate'])->name('user.password.update');
  // User WishlistAll Route 
->>>>>>> Nuzhat
 Route::controller(WishlistController::class)->group(function(){
 
      Route::get('/user/wishlist', 'UserWishlist')->name('user.wishlist');
@@ -110,9 +100,9 @@ Route::controller(PropertyTypeController::class)->group(function(){
 });
  // Property All Route 
 Route::controller(PropertyController::class)->group(function(){
-     Route::get('/all/property', 'AllProperty')->name('all.property'); 
-     Route::get('/add/property', 'AddProperty')->name('add.property');
-     Route::post('/store/property', 'StoreProperty')->name('store.property');
+    Route::get('/all/property', 'AllProperty')->name('all.property');
+    Route::get('/add/property', 'AddProperty')->name('add.property');
+    Route::post('/store/property', 'StoreProperty')->name('store.property');
      Route::get('/edit/property/{id}', 'EditProperty')->name('edit.property');
      Route::post('/update/property', 'UpdateProperty')->name('update.property');
      Route::post('/update/property/thambnail', 'UpdatePropertyThambnail')->name('update.property.thambnail');
@@ -174,7 +164,13 @@ Route::controller(AgentPropertyController::class)->group(function(){
 // Wishlist Add Route 
   Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);  
 <<<<<<< HEAD
+<<<<<<< HEAD
   Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
 =======
   Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);
+>>>>>>> Nuzhat
+=======
+  Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
+
+ 
 >>>>>>> Nuzhat

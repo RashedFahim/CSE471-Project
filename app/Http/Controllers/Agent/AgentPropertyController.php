@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Agent;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,26 +13,25 @@ use App\Models\User;
 use Intervention\Image\Facades\Image;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
-class PropertyController extends Controller
+class AgentPropertyController extends Controller
 {
-    public function AllProperty(){
+    public function AgentAllProperty(){
+        $id = Auth::user()->id;
+        $property = Property::where('agent_id',$id)->latest()->get();
+        return view('agent.property.all_property',compact('property'));
 
-        $property = Property::latest()->get();
-        return view('backend.property.all_property',compact('property'));
+    } // End Method   
 
-    } // End Method
-
-
-
-    public function AddProperty(){
+    public function AgentAddProperty(){
         $propertytype = PropertyType::latest()->get();
         $amenities = Amenities::latest()->get();
-        $activeAgent = User::where('status','active')->where('role','agent')->latest()->get();
-        return view('backend.property.add_property',compact('propertytype','amenities','activeAgent'));
+        return view('agent.property.add_property',compact('propertytype','amenities'));
 
     }// End Method 
-    public function StoreProperty(Request $request){
+
+    public function AgentStoreProperty(Request $request){
 
         $amen = $request->amenities_id;
         $amenites = implode(",", $amen);
@@ -76,7 +75,7 @@ class PropertyController extends Controller
             'longitude' => $request->longitude,
             'featured' => $request->featured,
             'hot' => $request->hot,
-            'agent_id' => $request->agent_id,
+            'agent_id' => Auth::user()->id,
             'status' => 1,
             'property_thambnail' => $save_url,
             'created_at' => Carbon::now(),
@@ -121,11 +120,11 @@ class PropertyController extends Controller
                 'message' => 'Property Inserted Successfully',
                 'alert-type' => 'success'
               );
-              return redirect()->route('all.property')->with($notification);
+              return redirect()->route('agent.all.property')->with($notification);
  
     }// End Method 
 
-    public function EditProperty($id){
+    public function AgentEditProperty($id){
         $facilities = Facility::where('property_id', $id)->get(); 
         $property = Property::findOrFail($id);
         $type = $property->amenities_id;
@@ -133,9 +132,7 @@ class PropertyController extends Controller
         $multiImage = MultiImage::where('property_id',$id)->get();
         $propertytype = PropertyType::latest()->get(); 
         $amenities = Amenities::latest()->get();
-        $activeAgent = User::where('status', 'active')->where('role', 'agent')-> latest()->get();
-        return view('backend. property.edit_property', compact ('property','propertytype', 'amenities', 'activeAgent', 'property_ami','multiImage' ,'facilities'));
+        return view('agent.property.edit_property', compact ('property','propertytype', 'amenities', 'property_ami','multiImage' ,'facilities'));
         }// End Method
-
-    }
-
+    //
+}
