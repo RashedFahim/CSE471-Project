@@ -29,7 +29,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware('auth')->group(function () {
-  Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile'); 
+ Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile'); 
   Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
  Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout'); 
  Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password'); 
@@ -144,14 +144,6 @@ Route::controller(AgentPropertyController::class)->group(function(){
  Route::get('/property/details/{id}/{slug}', [IndexController::class, 'PropertyDetails']);
 // Wishlist Add Route 
   Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);  
-<<<<<<< HEAD
-<<<<<<< HEAD
-  Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
-=======
-  Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);
->>>>>>> Nuzhat
-=======
   Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
 
  
->>>>>>> Nuzhat
