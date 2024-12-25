@@ -195,6 +195,7 @@ class PropertyTypeController extends Controller
     }// End Method
 
     
+
 }
 
 
