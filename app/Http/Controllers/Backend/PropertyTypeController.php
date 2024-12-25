@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\PropertyType;
 use App\Models\Amenities;
+use Illuminate\Support\Facades\Route;
+
 
 class PropertyTypeController extends Controller
 {
@@ -16,6 +18,37 @@ class PropertyTypeController extends Controller
         return view('backend.type.all_type',compact('types'));
 
     } // End Method 
+
+    // For get
+    public function NewType()
+    {
+        $types = PropertyType::all(); // Fetch all records
+        return response()->json([
+            'success' => true,
+            'data' => $types
+        ]);
+    }
+
+    // For post
+    public function SaveType(Request $request)
+    {
+        $request->validate([
+            'type_name' => 'required|unique:property_types|max:200',
+            'type_icon' => 'required'
+        ]);
+
+        $type = PropertyType::create([
+            'type_name' => $request->type_name,
+            'type_icon' => $request->type_icon
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Property Type created successfully',
+            'data' => $type
+        ]);
+    }
+
 
     public function AddType(){
 

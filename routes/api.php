@@ -19,6 +19,7 @@ use App\Http\Controllers\AmenityController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\Backend\PropertyTypeController;
 
 
 
