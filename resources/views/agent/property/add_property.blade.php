@@ -58,7 +58,7 @@
          <div class="col-sm-6">
             <div class="form-group mb-3">
                 <label class="form-label">Main Thumbnail </label>
-                <input type="file" name="property_thambnail " class="form-control" onChange="mainThamUrl(this)"  >
+                <input type="file" name="property_thambnail" class="form-control" onChange="mainThamUrl(this)"  >
 
                 <img src="" id="mainThmb">
 
