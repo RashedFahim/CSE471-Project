@@ -18,7 +18,7 @@
         <h6 class="card-title">Edit Property </h6>
             
 
-            <form method="post" action="{{ route('update.property') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('agent.update.property') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
 
 
@@ -285,7 +285,7 @@
         <h6 class="card-title">Edit Main Thambnail Image </h6>
             
 
-    <form method="post" action="{{ route('update.property.thambnail') }}" id="myForm" enctype="multipart/form-data">
+    <form method="post" action="{{ route('agent.update.property.thambnail') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
 
         <input type="hidden" name="id" value="{{ $property->id }}">
@@ -335,7 +335,7 @@
         <h6 class="card-title">Edit Multi Image  </h6>
             
 
-    <form method="post" action="{{ route('update.property.multiimage') }}" id="myForm" enctype="multipart/form-data">
+    <form method="post" action="{{ route('agent.update.property.multiimage') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
 
 
@@ -366,7 +366,7 @@
             <td>
     <input type="submit" class="btn btn-primary px-4" value="Update Image" >
 
-    <a href="{{ route('property.multiimg.delete',$img->id) }}" class="btn btn-danger" id="delete">Delete </a>
+    <a href="{{ route('agent.property.multiimg.delete',$img->id) }}" class="btn btn-danger" id="delete">Delete </a>
             </td>
         </tr>
         @endforeach
@@ -378,7 +378,7 @@
             </form> 
 
 
-<form method="post" action="{{ route('store.new.multiimage') }}" id="myForm" enctype="multipart/form-data">
+<form method="post" action="{{ route('agent.store.new.multiimage') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
 
         <input type="hidden" name="imageid" value="{{ $property->id }}">
@@ -428,7 +428,7 @@
         <h6 class="card-title">Edit Property Facility  </h6>
             
 
-    <form method="post" action="{{ route('update.property.facilities') }}" id="myForm" enctype="multipart/form-data">
+    <form method="post" action="{{ route('agent.update.property.facilities') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
 
          <input type="hidden" name="id" value="{{ $property->id }}">       
