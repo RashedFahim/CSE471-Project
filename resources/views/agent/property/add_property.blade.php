@@ -55,29 +55,6 @@
         </div><!-- Col -->
 
 
-         <div class="col-sm-6">
-            <div class="form-group mb-3">
-                <label class="form-label">Main Thumbnail </label>
-                <input type="file" name="property_thambnail" class="form-control" onChange="mainThamUrl(this)"  >
-
-                <img src="" id="mainThmb">
-
-
-            </div>
-        </div><!-- Col -->
-
-
-
-         <div class="col-sm-6">
-            <div class="form-group mb-3">
-                <label class="form-label">Multiple Image </label>
-                <input type="file" name="multi_img[]" class="form-control" id="multiImg" multiple="" >
-         <div class="row" id="preview_img"> </div>
-
-            </div>
-        </div><!-- Col -->
-
-
 
 
 
@@ -165,23 +142,6 @@
             </div>
         </div><!-- Col -->
  
-
-    </div><!-- Row -->
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="mb-3">
-                <label class="form-label">Latitude</label>
-                <input type="text" name="latitude" class="form-control" >
-                <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Latitude from address</a>
-            </div>
-        </div><!-- Col -->
-        <div class="col-sm-6">
-            <div class="mb-3">
-                <label class="form-label">Longitude</label>
-                <input type="text" name="longitude" class="form-control" >
-                 <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Longitude from address</a>
-            </div>
-        </div><!-- Col -->
 
     </div><!-- Row -->
 
