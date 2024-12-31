@@ -21,7 +21,6 @@
                     <thead>
                       <tr>
                         <th>Sl </th>
-                        <th>Image </th> 
                         <th>Name </th> 
                         <th>P Type </th> 
                         <th>Status Type </th> 
@@ -34,7 +33,6 @@
                    @foreach($property as $key => $item)
                       <tr>
                         <td>{{ $key+1 }}</td>
-                        <td><img src="{{ asset($item->property_thambnail) }}" style="width:70px; height:40px;"> </td> 
                         <td>{{ $item->property_name }}</td> 
                         <td>{{ $item->ptype_id }}</td> 
                         <td>{{ $item->property_status }}</td> 
