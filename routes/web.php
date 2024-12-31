@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Agent\AgentPropertyController;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\WishlistController;
    
 /*   
 |--------------------------------------------------------------------------
@@ -147,3 +148,16 @@ Route::controller(AgentPropertyController::class)->group(function(){
   Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
 
  
+
+
+
+  // Wishlist Add Route 
+  Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);  
+
+
+
+   // User WishlistAll Route 
+Route::controller(WishlistController::class)->group(function(){
+     Route::get('/user/wishlist', 'UserWishlist')->name('user.wishlist'); 
+      
+});
