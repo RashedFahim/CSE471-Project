@@ -23,7 +23,7 @@
             <div class="auto-container">
                 <div class="row clearfix">
                     
-        @php 
+                @php 
 
             $id = Auth::user()->id;
             $userData=App\Models\User::find($id);
