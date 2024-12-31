@@ -1,5 +1,5 @@
-@extends('agent.agent_dashboard')
-@section('agent')
+@extends('admin.admin_dashboard')
+@section('admin')
 
 
 
