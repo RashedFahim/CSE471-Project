@@ -158,6 +158,8 @@ Route::controller(AgentPropertyController::class)->group(function(){
 
    // User WishlistAll Route 
 Route::controller(WishlistController::class)->group(function(){
-     Route::get('/user/wishlist', 'UserWishlist')->name('user.wishlist'); 
+     Route::get('/user/wishlist', 'UserWishlist')->name('user.wishlist');
+     Route::get('/get-wishlist-property', 'GetWishlistProperty');
+     Route::get('/wishlist-remove/{id}', 'WishlistRemove');  
       
 });
