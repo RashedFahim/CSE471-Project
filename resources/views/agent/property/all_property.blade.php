@@ -50,9 +50,8 @@
                         </td> 
                         <td>
 
-
+       <a href="{{ route('agent.details.property',$item->id) }}" class="btn btn-inverse-info"> Details </a>
        <a href="{{ route('agent.edit.property',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
-
        <a href="{{ route('agent.delete.property',$item->id) }}" class="btn btn-inverse-danger">Delete </a>
                         </td> 
                       </tr>
