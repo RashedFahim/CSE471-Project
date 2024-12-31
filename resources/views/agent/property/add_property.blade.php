@@ -131,12 +131,6 @@
         </div><!-- Col -->
         <div class="col-sm-4">
             <div class="mb-3">
-                <label class="form-label">Property Video</label>
-                <input type="text" name="property_video"  class="form-control" >
-            </div>
-        </div><!-- Col -->
-        <div class="col-sm-4">
-            <div class="mb-3">
                 <label class="form-label">Neighborhood</label>
                  <input type="text" name="neighborhood"  class="form-control" >
             </div>
