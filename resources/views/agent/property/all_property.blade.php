@@ -50,11 +50,10 @@
                         </td> 
                         <td>
 
-        <a href="{{ route('agent.details.property',$item->id) }}" class="btn btn-inverse-info" title="Details"> <i data-feather="eye"></i> </a>
 
-       <a href="{{ route('agent.edit.property',$item->id) }}" class="btn btn-inverse-warning" title="Edit"> <i data-feather="edit"></i> </a>
+       <a href="{{ route('agent.edit.property',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
 
-       <a href="{{ route('agent.delete.property',$item->id) }}" class="btn btn-inverse-danger" id="delete" title="Delete"> <i data-feather="trash-2"></i>  </a>
+       <a href="{{ route('agent.delete.property',$item->id) }}" class="btn btn-inverse-danger">Delete </a>
                         </td> 
                       </tr>
                      @endforeach
