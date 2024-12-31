@@ -67,12 +67,6 @@
                     <td><code>{{ $property->postal_code }}</code></td> 
                 </tr>
 
-                 <tr> 
-                    <td>Main Image </td>
-                    <td>
-                    <img src="{{ asset($property->property_thambnail) }}" style="width:100px; height:70px;">
-                    </td> 
-                </tr>
 
                  <tr> 
                     <td>Status </td>
@@ -111,32 +105,15 @@
                     <td><code>{{ $property->property_size }}</code></td> 
                 </tr>
 
-
-                <tr> 
-                    <td>Property Video</td>
-                    <td><code>{{ $property->property_video }}</code></td> 
-                </tr>
-
                 <tr> 
                     <td>Neighborhood </td>
                     <td><code>{{ $property->neighborhood }}</code></td> 
                 </tr>
 
-                 <tr> 
-                    <td>Latitude </td>
-                    <td><code>{{ $property->latitude }}</code></td> 
-                </tr>
-
-
-                 <tr> 
-                    <td>Longitude </td>
-                    <td><code>{{ $property->longitude }}</code></td> 
-                </tr>
-
 
                  <tr> 
                     <td>Property Type </td>
-                    <td><code>{{ $property['type']['type_name'] }}</code></td> 
+                    <td><code>{{ $property['type']['type_name'] ?? 'N/A' }}</code></td> 
                 </tr>
 
                  <tr> 
@@ -159,7 +136,7 @@
             @if($property->agent_id == NULL)
             <td><code> Admin </code></td>
             @else
-            <td><code> {{ $property['user']['name'] }} </code></td>
+            <td><code> {{ $property['user']['name'] ?? 'N/A' }} </code></td>
             @endif
                      
                 </tr>
