@@ -42,8 +42,8 @@ class PropertyController extends Controller
         // dd($amenites);
 
         $pcode = IdGenerator::generate(['table' => 'properties','field' => 'property_code','length' => 5, 'prefix' => 'PC' ]);
-
-
+        
+        
         $property_id = Property::insertGetId([
 
             'ptype_id' => $request->ptype_id,

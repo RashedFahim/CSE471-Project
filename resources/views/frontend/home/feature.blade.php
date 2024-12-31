@@ -26,12 +26,12 @@ $property = App\Models\Property::where('status','1')->where('featured','1')->lim
 
            @if($item->agent_id == Null)
 
-     <figure class="author-thumb"><img src="{{ url('upload/admin.jpg') }}" alt=""></figure>
+                <figure class="author-thumb"><img src="{{ url('upload/admin_images/202412311213anime-icon-18.jpg') }}" alt=""></figure>
                                 <h6>Admin </h6>
 
            @else
 
-           <figure class="author-thumb"><img src="{{ (!empty($item->user->photo)) ? url('upload/agent_images/'.$item->user->photo) : url('upload/no_image.jpg') }}" alt=""></figure>
+                <figure class="author-thumb"><img src="{{ (!empty($item->user->photo)) ? url('upload/agent_images/'.$item->user->photo) : url('upload/no_image.jpg') }}" alt=""></figure>
                                 <h6>{{ $item->user->name }}</h6>
            @endif                     
                                 
