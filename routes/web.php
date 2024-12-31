@@ -153,7 +153,11 @@ Route::controller(AgentPropertyController::class)->group(function(){
 
 
   // Wishlist Add Route 
-  Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']);  
+  Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']); 
+
+  // Compare Add Route 
+  Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);   
+   
 
 
 
@@ -164,3 +168,14 @@ Route::controller(WishlistController::class)->group(function(){
      Route::get('/wishlist-remove/{id}', 'WishlistRemove');  
       
 });
+
+
+ // User Compare All Route 
+ Route::controller(CompareController::class)->group(function(){
+     Route::get('/user/compare', 'UserCompare')->name('user.compare');
+     Route::get('/get-compare-property', 'GetCompareProperty');
+     Route::get('/compare-remove/{id}', 'CompareRemove');
+
+
+});
+
