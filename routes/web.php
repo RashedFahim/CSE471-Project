@@ -177,5 +177,8 @@ Route::controller(WishlistController::class)->group(function(){
      Route::get('/compare-remove/{id}', 'CompareRemove');
 
 
+
+// Agent Details Page in Frontend 
+Route::get('/agent/details/{id}', [IndexController::class, 'AgentDetails'])->name('agent.details');
 });
 
