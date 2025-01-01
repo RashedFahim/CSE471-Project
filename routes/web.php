@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -9,7 +10,8 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Agent\AgentPropertyController;
 use App\Http\Controllers\Frontend\IndexController;
-   
+use App\Http\Controllers\Frontend\WishlistController;
+use App\Http\Controllers\Frontend\CompareController;   
 /*   
 |--------------------------------------------------------------------------
 | Web Routes
@@ -147,3 +149,33 @@ Route::controller(AgentPropertyController::class)->group(function(){
   Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);  
 
  
+
+
+
+  // Wishlist Add Route 
+  Route::post('/add-to-wishList/{property_id}', [WishlistController::class, 'AddToWishList']); 
+
+  // Compare Add Route 
+  Route::post('/add-to-compare/{property_id}', [CompareController::class, 'AddToCompare']);   
+   
+
+
+
+   // User WishlistAll Route 
+Route::controller(WishlistController::class)->group(function(){
+     Route::get('/user/wishlist', 'UserWishlist')->name('user.wishlist');
+     Route::get('/get-wishlist-property', 'GetWishlistProperty');
+     Route::get('/wishlist-remove/{id}', 'WishlistRemove');  
+      
+});
+
+
+ // User Compare All Route 
+ Route::controller(CompareController::class)->group(function(){
+     Route::get('/user/compare', 'UserCompare')->name('user.compare');
+     Route::get('/get-compare-property', 'GetCompareProperty');
+     Route::get('/compare-remove/{id}', 'CompareRemove');
+
+
+});
+
