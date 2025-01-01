@@ -1,4 +1,4 @@
-@php
+<!-- @php
 $property = App\Models\Property::where('status','1')->where('featured','1')->limit(3)->get();
 @endphp
 
@@ -67,4 +67,4 @@ $property = App\Models\Property::where('status','1')->where('featured','1')->lim
                 </div>
                 <div class="more-btn centred"><a href="property-list.html" class="theme-btn btn-one">View All Listing</a></div>
             </div>
-        </section>
+        </section> -->

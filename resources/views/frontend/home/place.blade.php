@@ -1,4 +1,4 @@
-<section class="place-section sec-pad">
+<!-- <section class="place-section sec-pad">
             <div class="auto-container">
                 <div class="sec-title centred">
                     <h5>Top Places</h5>
@@ -54,4 +54,4 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
