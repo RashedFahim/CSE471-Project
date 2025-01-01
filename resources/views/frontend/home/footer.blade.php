@@ -8,8 +8,11 @@
                                     <h3>About</h3>
                                 </div>
                                 <div class="text">
-                                    <p>Lorem ipsum dolor amet consetetur adi pisicing elit sed eiusm tempor in cididunt ut labore dolore magna aliqua enim ad minim venitam</p>
-                                    <p>Quis nostrud exercita laboris nisi ut aliquip commodo.</p>
+                                    <p>Welcome to our Real Estate Property Listing System, a platform designed to revolutionize the way properties are bought, sold, and rented. We are committed to connecting real estate agencies, property owners, and buyers or renters in a seamless and efficient manner.
+
+Our system allows property owners and agents to showcase detailed listings with images, prices, and amenities, while giving potential buyers and renters the tools to find their perfect property through advanced filtering and direct communication. By fostering transparency and ease of access, we aim to make the real estate process straightforward and hassle-free for everyone.
+
+Whether you're looking to list a property, find your dream home, or explore investment opportunities, we’re here to help you every step of the way.</p>
                                 </div>
                             </div>
                         </div>

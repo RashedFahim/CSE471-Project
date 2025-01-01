@@ -5,12 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Property;
-use App\Models\MultiImage;
 use App\Models\Facility;
 use App\Models\Amenities;
 use App\Models\PropertyType; 
 use App\Models\User;
-use Intervention\Image\Facades\Image;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Carbon\Carbon;
 use App\Models\PackagePlan;
@@ -44,8 +42,8 @@ class PropertyController extends Controller
         // dd($amenites);
 
         $pcode = IdGenerator::generate(['table' => 'properties','field' => 'property_code','length' => 5, 'prefix' => 'PC' ]);
-
-
+        
+        
         $property_id = Property::insertGetId([
 
             'ptype_id' => $request->ptype_id,
