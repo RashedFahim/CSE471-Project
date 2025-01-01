@@ -179,3 +179,5 @@ Route::controller(WishlistController::class)->group(function(){
 
 });
 
+ // Send Message from Property Details Page 
+ Route::post('/property/message', [IndexController::class, 'PropertyMessage'])->name('property.message');

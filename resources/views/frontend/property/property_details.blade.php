@@ -233,7 +233,7 @@
     $userData = App\Models\User::find($id);
 @endphp
 
- <form action="#" method="post" class="default-form">
+ <form action="{{ route('property.message') }}" method="post" class="default-form">
     @csrf 
 
     <input type="hidden" name="property_id" value="{{ $property->id }}">
@@ -264,7 +264,7 @@
 
 @else
 
-<form action="#" method="post" class="default-form">
+<form action="{{ route('property.message') }}" method="post" class="default-form">
     @csrf 
 
     <input type="hidden" name="property_id" value="{{ $property->id }}">
