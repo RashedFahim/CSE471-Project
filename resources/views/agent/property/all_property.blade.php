@@ -22,7 +22,6 @@
                     <thead>
                       <tr>
                         <th>Sl </th>
-                        <th>Image </th> 
                         <th>Name </th> 
                         <th>P Type </th> 
                         <th>Status Type </th> 
@@ -36,9 +35,8 @@
                    @foreach($property as $key => $item)
                       <tr>
                         <td>{{ $key+1 }}</td>
-                        <td><img src="{{ asset($item->property_thambnail) }}" style="width:70px; height:40px;"> </td> 
                         <td>{{ $item->property_name }}</td> 
-                        <td>{{ $item['type']['type_name'] }}</td> 
+                        <td>{{ $item['type']['type_name'] ?? 'N/A' }}</td> 
                         <td>{{ $item->property_status }}</td> 
                         <td>{{ $item->city }}</td> 
                         <td>{{ $item->property_code }}</td> 
@@ -52,11 +50,9 @@
                         </td> 
                         <td>
 
-        <a href="{{ route('agent.details.property',$item->id) }}" class="btn btn-inverse-info" title="Details"> <i data-feather="eye"></i> </a>
-
-       <a href="{{ route('agent.edit.property',$item->id) }}" class="btn btn-inverse-warning" title="Edit"> <i data-feather="edit"></i> </a>
-
-       <a href="{{ route('agent.delete.property',$item->id) }}" class="btn btn-inverse-danger" id="delete" title="Delete"> <i data-feather="trash-2"></i>  </a>
+       <a href="{{ route('agent.details.property',$item->id) }}" class="btn btn-inverse-info"> Details </a>
+       <a href="{{ route('agent.edit.property',$item->id) }}" class="btn btn-inverse-warning"> Edit </a>
+       <a href="{{ route('agent.delete.property',$item->id) }}" class="btn btn-inverse-danger">Delete </a>
                         </td> 
                       </tr>
                      @endforeach

@@ -109,12 +109,7 @@
         <div class="col-sm-3">
             <div class="mb-3">
                <label class="form-label">State</label>
-                <select name="state" class="form-select" id="exampleFormControlSelect1">
-                <option selected="" disabled="">Select State</option>
-               @foreach($pstate as $state)
-                <option value="{{ $state->id }}" {{ $state->id == $property->state ? 'selected' : '' }}>{{ $state->state_name }}</option>
-               @endforeach
-            </select>
+               <input type="text" name="state" class="form-control" value="{{ $property->state }}" >
             </div>
         </div><!-- Col -->
 
@@ -137,12 +132,6 @@
         </div><!-- Col -->
         <div class="col-sm-4">
             <div class="mb-3">
-                <label class="form-label">Property Video</label>
-                <input type="text" name="property_video"  class="form-control" value="{{ $property->property_video }}"  >
-            </div>
-        </div><!-- Col -->
-        <div class="col-sm-4">
-            <div class="mb-3">
                 <label class="form-label">Neighborhood</label>
                  <input type="text" name="neighborhood"  class="form-control" value="{{ $property->neighborhood }}" >
             </div>
@@ -152,24 +141,6 @@
     </div><!-- Row -->
 
 
-
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="mb-3">
-                <label class="form-label">Latitude</label>
-                <input type="text" name="latitude" class="form-control" value="{{ $property->latitude }}" >
-                <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Latitude from address</a>
-            </div>
-        </div><!-- Col -->
-        <div class="col-sm-6">
-            <div class="mb-3">
-                <label class="form-label">Longitude</label>
-                <input type="text" name="longitude" class="form-control" value="{{ $property->longitude }}" >
-                 <a href="https://www.latlong.net/convert-address-to-lat-long.html" target="_blank">Go here to get Longitude from address</a>
-            </div>
-        </div><!-- Col -->
-    </div><!-- Row -->
 
 
 
@@ -271,147 +242,6 @@
 
 			</div>
  
-
-   <!--  /// Property Main Thambnail Image Update //// -->
-
-<div class="page-content" style="margin-top: -35px;" > 
-       
-        <div class="row profile-body"> 
-          <div class="col-md-12 col-xl-12 middle-wrapper">
-            <div class="row">
-       
-       <div class="card">
-    <div class="card-body">
-        <h6 class="card-title">Edit Main Thambnail Image </h6>
-            
-
-    <form method="post" action="{{ route('agent.update.property.thambnail') }}" id="myForm" enctype="multipart/form-data">
-                @csrf
-
-        <input type="hidden" name="id" value="{{ $property->id }}">
-        <input type="hidden" name="old_img" value="{{ $property->property_thambnail }}" >
-
-         <div class="row mb-3">
-            <div class="form-group col-md-6">
-                <label class="form-label">Main Thambnail </label>
-                <input type="file" name="property_thambnail" class="form-control" onChange="mainThamUrl(this)"  >
-
-                <img src="" id="mainThmb">
-
-            </div>
-
-
-               <div class="form-group col-md-6">
-                <label class="form-label">  </label> 
-                <img src="{{ asset($property->property_thambnail) }}" style="width:100px; height:100px;">
-            </div>
-        </div><!-- Col -->
-
-  <button type="submit" class="btn btn-primary">Save Changes </button>
-
-
-            </form> 
-        </div>
-          </div>
-
-        </div>
-    </div>
-  </div>
-</div> 
-  <!--    /// End  Property Main Thambnail Image Update //// -->
-
- 
-   <!--  /// Property Multi Image Update //// -->
-
-
-   <div class="page-content" style="margin-top: -35px;" > 
-       
-        <div class="row profile-body"> 
-          <div class="col-md-12 col-xl-12 middle-wrapper">
-            <div class="row">
-       
-       <div class="card">
-    <div class="card-body">
-        <h6 class="card-title">Edit Multi Image  </h6>
-            
-
-    <form method="post" action="{{ route('agent.update.property.multiimage') }}" id="myForm" enctype="multipart/form-data">
-                @csrf
-
-
-<div class="table-responsive">
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Sl</th>
-            <th>Image</th>
-            <th>Change Image </th>
-            <th>Delete </th> 
-        </tr>
-    </thead>
-    <tbody>
-        
-        @foreach($multiImage as $key => $img)
-        <tr>
-
-             <td>{{ $key+1 }}</td>
-
-            <td class="py-1">
-                <img src="{{ asset($img->photo_name) }}" alt="image"  style="width:50px; height:50px;">
-            </td> 
-           
-            <td> 
-            <input type="file" class="form-control" name="multi_img[{{ $img->id }}]">
-            </td>
-            <td>
-    <input type="submit" class="btn btn-primary px-4" value="Update Image" >
-
-    <a href="{{ route('agent.property.multiimg.delete',$img->id) }}" class="btn btn-danger" id="delete">Delete </a>
-            </td>
-        </tr>
-        @endforeach
-         
-    </tbody>
-</table>
-</div>
- 
-            </form> 
-
-
-<form method="post" action="{{ route('agent.store.new.multiimage') }}" id="myForm" enctype="multipart/form-data">
-                @csrf
-
-        <input type="hidden" name="imageid" value="{{ $property->id }}">
-
-<table class="table table-striped">
- <tbody>
-    <tr>
-        <td>
-            <input type="file" class="form-control" name="multi_img">
-        </td>
-
-        <td>
-            <input type="submit" class="btn btn-info px-4" value="Add Image" >
-        </td>
-    </tr>
-</tbody>
-</table>
-
-</form> 
-
-
-
-
-        </div>
-          </div>
-
-        </div>
-    </div>
-  </div>
-</div> 
-
-
- <!--  /// End Property Multi Image Update //// -->
 
 
 
