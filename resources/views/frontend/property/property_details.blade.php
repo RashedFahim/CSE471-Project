@@ -122,46 +122,6 @@
                             <li><span>City:</span> {{ $property->city }}</li>
                         </ul>
                     </div>
-                    <div class="schedule-box content-widget">
-                        <div class="title-box">
-                            <h4>Schedule A Tour</h4>
-                        </div>
-                        <div class="form-inner">
-                            <form action="property-details.html" method="post">
-                                @csrf
-                                <input type="hidden" name="property_id" value="{{ $property->id }}">
-                                @if($property->agent_id == Null)
-                                    <input type="hidden" name="agent_id" value="">
-                                @else
-                                    <input type="hidden" name="agent_id" value="{{ $property->agent_id }}">
-                                @endif
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-12 col-sm-12 column">
-                                        <div class="form-group">
-                                            <i class="far fa-calendar-alt"></i>
-                                            <input type="text" name="tour_date" placeholder="Tour Date" id="datepicker">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 column">
-                                        <div class="form-group">
-                                            <i class="far fa-clock"></i>
-                                            <input type="text" name="tour_time" placeholder="Any Time">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                        <div class="form-group">
-                                            <textarea name="message" placeholder="Your message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                        <div class="form-group message-btn">
-                                            <button type="submit" class="theme-btn btn-one">Submit Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

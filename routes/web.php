@@ -89,9 +89,6 @@ Route::controller(PropertyController::class)->group(function(){
      Route::get('/edit/property/{id}', 'EditProperty')->name('edit.property');
      Route::post('/update/property', 'UpdateProperty')->name('update.property');
      Route::post('/update/property/thambnail', 'UpdatePropertyThambnail')->name('update.property.thambnail');
-      Route::post('/update/property/multiimage', 'UpdatePropertyMultiimage')->name('update.property.multiimage');
-    Route::get('/property/multiimg/delete/{id}', 'PropertyMultiImageDelete')->name('property.multiimg.delete');
-    Route::post('/store/new/multiimage', 'StoreNewMultiimage')->name('store.new.multiimage');
      Route::post('/update/property/facilities', 'UpdatePropertyFacilities')->name('update.property.facilities');
      Route::get('/delete/property/{id}', 'DeleteProperty')->name('delete.property');
      Route::get('/details/property/{id}', 'DetailsProperty')->name('details.property');
