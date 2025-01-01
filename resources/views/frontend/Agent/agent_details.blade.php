@@ -1,6 +1,8 @@
 @extends('frontend.frontend_dashboard')
 @section('main')
 
+
+
 <!--Page Title-->
 <section class="page-title centred" style="background-image: url(assets/images/background/page-title.jpg);">
             <div class="auto-container">
@@ -1490,6 +1492,5 @@
             </div>
         </section>
         <!-- agents-page-section end -->
-
 
 @endsection
