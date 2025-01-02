@@ -89,9 +89,6 @@ Route::controller(PropertyController::class)->group(function(){
      Route::get('/edit/property/{id}', 'EditProperty')->name('edit.property');
      Route::post('/update/property', 'UpdateProperty')->name('update.property');
      Route::post('/update/property/thambnail', 'UpdatePropertyThambnail')->name('update.property.thambnail');
-      Route::post('/update/property/multiimage', 'UpdatePropertyMultiimage')->name('update.property.multiimage');
-    Route::get('/property/multiimg/delete/{id}', 'PropertyMultiImageDelete')->name('property.multiimg.delete');
-    Route::post('/store/new/multiimage', 'StoreNewMultiimage')->name('store.new.multiimage');
      Route::post('/update/property/facilities', 'UpdatePropertyFacilities')->name('update.property.facilities');
      Route::get('/delete/property/{id}', 'DeleteProperty')->name('delete.property');
      Route::get('/details/property/{id}', 'DetailsProperty')->name('details.property');
@@ -99,6 +96,8 @@ Route::controller(PropertyController::class)->group(function(){
       Route::post('/active/property', 'ActiveProperty')->name('active.property');
        Route::get('/admin/package/history', 'AdminPackageHistory')->name('admin.package.history');
        Route::get('/package/invoice/{id}', 'PackageInvoice')->name('package.invoice');
+       Route::get('/admin/property/message/', 'AdminPropertyMessage')->name('admin.property.message');
+       Route::get('/admin/message/details/{id}', 'AdminMessageDetails')->name('admin.message.details'); 
 });
  // Agent All Route from admin 
 Route::controller(AdminController::class)->group(function(){
@@ -122,12 +121,11 @@ Route::controller(AgentPropertyController::class)->group(function(){
      Route::get('/agent/edit/property/{id}', 'AgentEditProperty')->name('agent.edit.property'); 
      Route::post('/agent/update/property', 'AgentUpdateProperty')->name('agent.update.property'); 
      Route::post('/agent/update/property/thambnail', 'AgentUpdatePropertyThambnail')->name('agent.update.property.thambnail'); 
-     Route::post('/agent/update/property/multiimage', 'AgentUpdatePropertyMultiimage')->name('agent.update.property.multiimage'); 
-     Route::get('/agent/property/multiimg/delete/{id}', 'AgentPropertyMultiimgDelete')->name('agent.property.multiimg.delete'); 
-     Route::post('/agent/store/new/multiimage', 'AgentStoreNewMultiimage')->name('agent.store.new.multiimage');
       Route::post('/agent/update/property/facilities', 'AgentUpdatePropertyFacilities')->name('agent.update.property.facilities');
       Route::get('/agent/details/property/{id}', 'AgentDetailsProperty')->name('agent.details.property'); 
-      Route::get('/agent/delete/property/{id}', 'AgentDeleteProperty')->name('agent.delete.property');  
+      Route::get('/agent/delete/property/{id}', 'AgentDeleteProperty')->name('agent.delete.property'); 
+      Route::get('/agent/property/message/', 'AgentPropertyMessage')->name('agent.property.message'); 
+      Route::get('/agent/message/details/{id}', 'AgentMessageDetails')->name('agent.message.details');   
 });
  // Agent Buy Package Route from admin 
 Route::controller(AgentPropertyController::class)->group(function(){
@@ -138,6 +136,7 @@ Route::controller(AgentPropertyController::class)->group(function(){
       Route::post('/store/professional/plan', 'StoreProfessionalPlan')->name('store.professional.plan');
       Route::get('/package/history', 'PackageHistory')->name('package.history');
       Route::get('/agent/package/invoice/{id}', 'AgentPackageInvoice')->name('agent.package.invoice');
+
      
 });
  
@@ -182,3 +181,5 @@ Route::controller(WishlistController::class)->group(function(){
 Route::get('/agent/details/{id}', [IndexController::class, 'AgentDetails'])->name('agent.details');
 });
 
+ // Send Message from Property Details Page 
+ Route::post('/property/message', [IndexController::class, 'PropertyMessage'])->name('property.message');

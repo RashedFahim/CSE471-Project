@@ -13,6 +13,7 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Carbon\Carbon;
 use App\Models\PackagePlan;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\PropertyMessage;
 
 class PropertyController extends Controller
 {
@@ -299,5 +300,15 @@ class PropertyController extends Controller
         return $pdf->download('invoice.pdf');
     }
 
+    public function AdminPropertyMessage(){
+        $usermsg = PropertyMessage::latest()->get();
+        return view('backend.message.all_message',compact('usermsg'));
+    }
+
+    public function AdminMessageDetails($id){
+        $usermsg = PropertyMessage::latest()->get();
+        $msgdetails = PropertyMessage::findOrFail($id);
+        return view('backend.message.message_details',compact('usermsg','msgdetails'));
+    }
 
 }

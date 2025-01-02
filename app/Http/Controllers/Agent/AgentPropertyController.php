@@ -3,18 +3,17 @@ namespace App\Http\Controllers\Agent;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Property;
-use App\Models\MultiImage;
 use App\Models\Facility;
 use App\Models\Amenities;
 use App\Models\PropertyType;
 use App\Models\User;
-use Intervention\Image\Facades\Image;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use App\Models\PackagePlan;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\PropertyMessage;
 
 
 class AgentPropertyController extends Controller
@@ -261,6 +260,19 @@ class AgentPropertyController extends Controller
         return $pdf->download('invoice.pdf');
 
     }// End Method 
+
+    public function AgentPropertyMessage(){
+        $id = Auth::user()->id;
+        $usermsg = PropertyMessage::where('agent_id',$id)->get();
+        return view('agent.message.all_message',compact('usermsg'));
+    }
+
+    public function AgentMessageDetails($id){
+        $uid = Auth::user()->id;
+        $usermsg = PropertyMessage::where('agent_id',$uid)->get();
+        $msgdetails = PropertyMessage::findOrFail($id);
+        return view('agent.message.message_details',compact('usermsg','msgdetails'));
+    }
 
 
 
