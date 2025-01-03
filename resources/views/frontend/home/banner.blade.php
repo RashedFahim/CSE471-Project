@@ -2,7 +2,7 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="content-box centred">
-                        <h2>Create Lasting Wealth Through Realshed</h2>
+                        <h2>Create Lasting Wealth Through RealEasy</h2>
                         <p></p>
                     </div>
                     <div class="search-field">

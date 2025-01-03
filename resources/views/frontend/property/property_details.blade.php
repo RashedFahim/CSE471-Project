@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-    {{ $property->property_name }} | Easy RealEstate  
+    {{ $property->property_name }} | RealEasy RealEstate  
 @endsection
 
 <!--Page Title-->
