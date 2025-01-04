@@ -16,19 +16,16 @@
         <!-- feature-section end -->
 
 
-        <!-- video-section -->
-        @include('frontend.home.feature')
-        <!-- video-section end -->
 
 
-        <!-- deals-section -->
+        {{-- <!-- deals-section -->
         @include('frontend.home.deals')
-        <!-- deals-section end -->
+        <!-- deals-section end --> --}}
 
-
+{{-- 
         <!-- testimonial-section end -->
         @include('frontend.home.deals')
-        <!-- testimonial-section end -->
+        <!-- testimonial-section end --> --}}
 
 
         <!-- chooseus-section -->
@@ -46,17 +43,17 @@
         <!-- team-section end -->
 
 
-        <!-- cta-section -->
+        {{-- <!-- cta-section -->
         @include('frontend.home.cta')
-        <!-- cta-section end -->
+        <!-- cta-section end --> --}}
 
 
-        <!-- news-section -->
+        {{-- <!-- news-section -->
         @include('frontend.home.news')
-        <!-- news-section end -->
+        <!-- news-section end --> --}}
 
 
-        <!-- download-section -->
+        {{-- <!-- download-section -->
         @include('frontend.home.news')
-        <!-- download-section end -->
+        <!-- download-section end --> --}}
 @endsection
