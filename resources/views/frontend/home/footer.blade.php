@@ -35,7 +35,7 @@ Whether you're looking to list a property, find your dream home, or explore inve
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget post-widget">
-                                <div class="widget-title">
+                                {{-- <div class="widget-title">
                                     <h3>Top News</h3>
                                 </div>
                                 <div class="post-inner">
@@ -49,7 +49,7 @@ Whether you're looking to list a property, find your dream home, or explore inve
                                         <h5><a href="blog-details.html">Ways to Increase Trust</a></h5>
                                         <p>Mar 24, 2020</p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
